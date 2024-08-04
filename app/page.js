@@ -160,7 +160,8 @@ export default function Home() {
         >
           {inventory.map((i) =>
             i["Count"] > 0 ? (
-              <Paper sx={{ bgcolor: "#7091E6" }} elevation={12}>
+              <Paper sx={{ bgcolor: "#7091E6" }} elevation={12} key={i['__name__']}>
+                
                 <ListItem alignItems="center">
                   <ListItemText sx={{ textAlign: "center", color: "white" }}>
                     {i["Name"]}
@@ -263,7 +264,7 @@ export default function Home() {
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
             {inventory.map((i) => (
-              <Grid item xs={4}>
+              <Grid item xs={4} key={i['__name__']}> 
                 <Paper
                   elevation={5}
                   sx={{
